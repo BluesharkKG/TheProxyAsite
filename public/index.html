@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TheProxyASite</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="chrome">
+        <div class="nav-row">
+          <button id="backBtn" class="nav-btn" title="Back (Alt+Left)">◀</button>
+          <button id="forwardBtn" class="nav-btn" title="Forward (Alt+Right)">▶</button>
+          <button id="reloadBtn" class="nav-btn" title="Reload (F5)">⟳</button>
+          <form id="urlForm" class="url-form" autocomplete="off">
+            <input
+              id="urlInput"
+              type="text"
+              spellcheck="false"
+              placeholder="Enter a URL or search query"
+            />
+            <button id="goBtn" class="go-btn" type="submit">Go</button>
+          </form>
+          <button id="historyBtn" class="history-btn" title="Toggle history">☰</button>
+        </div>
+        <div class="load-row">
+          <div id="progressTrack" class="progress-track">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+          <span id="statusText" class="status-text">Ready</span>
+        </div>
+      </header>
+
+      <main class="viewport">
+        <section id="homeView" class="home-view">
+          <h1>TheProxyASite</h1>
+          <p>Private browsing routed through your proxy endpoint.</p>
+          <div class="quick-links">
+            <button class="quick-link" data-url="https://google.com">Google</button>
+            <button class="quick-link" data-url="https://wikipedia.org">Wikipedia</button>
+            <button class="quick-link" data-url="https://github.com">GitHub</button>
+            <button class="quick-link" data-url="https://news.ycombinator.com">HN</button>
+            <button class="quick-link" data-url="https://reddit.com">Reddit</button>
+          </div>
+        </section>
+
+        <section id="errorView" class="error-view hidden">
+          <h2>Failed to load page</h2>
+          <p id="errorMessage">Unknown proxy error.</p>
+          <button id="retryBtn" class="retry-btn">Retry</button>
+        </section>
+
+        <iframe
+          id="proxyFrame"
+          class="proxy-frame hidden"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals allow-top-navigation"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </main>
+
+      <aside id="historyDrawer" class="history-drawer">
+        <div class="history-header">
+          <h3>History</h3>
+          <button id="clearHistoryBtn" class="clear-history">Clear</button>
+        </div>
+        <ul id="historyList" class="history-list"></ul>
+      </aside>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
