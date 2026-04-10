@@ -1,4 +1,4 @@
-const PROXY_BASE = "https://theproxyasite.onrender.com";
+const PROXY_BASE = "https://easy-learn-io.onrender.com";
 const MAX_HISTORY_ITEMS = 100;
 const LOAD_TIMEOUT_MS = 25000;
 
