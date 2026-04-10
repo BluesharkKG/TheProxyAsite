@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: theproxyasite
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
