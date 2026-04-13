@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Retro Games</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0a0a0a;
+      --panel: #131313;
+      --text: #f3f3f3;
+      --muted: #b2b2b2;
+      --border: #262626;
+      --accent: #3d3d3d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 1rem;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      letter-spacing: 0.02em;
+    }
+
+    .subtitle {
+      margin: 0.35rem 0 1.1rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 0.9rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 120ms ease, border-color 120ms ease;
+    }
+
+    .card:hover {
+      transform: translateY(-1px) scale(1.005);
+      border-color: var(--accent);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .open {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.2rem 0.55rem;
+      white-space: nowrap;
+    }
+
+    .open:hover {
+      border-color: var(--accent);
+      background: #171717;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      border: 0;
+      background: #000;
+      aspect-ratio: 16 / 9;
+    }
+
+    iframe.square {
+      aspect-ratio: 1 / 1;
+    }
+
+    @media (min-width: 980px) {
+      .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Retro Games</h1>
+    <p class="subtitle">Lightweight games — optimized for low-end devices</p>
+
+    <section class="grid" aria-label="Retro games">
+      <article class="card">
+        <header class="card-header">
+          <h2>Super Mario (NES)</h2>
+          <a class="open" href="https://emulatorgames.online/games/nes/super-mario-bros" target="_blank" rel="noopener noreferrer">Fullscreen</a>
+        </header>
+        <iframe
+          title="Super Mario NES"
+          src="https://emulatorgames.online/games/nes/super-mario-bros"
+          loading="lazy"
+          scrolling="no"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+          referrerpolicy="no-referrer"
+          allowfullscreen>
+        </iframe>
+      </article>
+
+      <article class="card">
+        <header class="card-header">
+          <h2>Tetris</h2>
+          <a class="open" href="https://tetris.com/play-tetris" target="_blank" rel="noopener noreferrer">Fullscreen</a>
+        </header>
+        <iframe
+          title="Tetris"
+          src="https://tetris.com/play-tetris"
+          loading="lazy"
+          scrolling="no"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+          referrerpolicy="no-referrer"
+          allowfullscreen>
+        </iframe>
+      </article>
+
+      <article class="card">
+        <header class="card-header">
+          <h2>Pac-Man</h2>
+          <a class="open" href="https://www.google.com/logos/2010/pacman10-i.html" target="_blank" rel="noopener noreferrer">Fullscreen</a>
+        </header>
+        <iframe
+          class="square"
+          title="Pac-Man"
+          src="https://www.google.com/logos/2010/pacman10-i.html"
+          loading="lazy"
+          scrolling="no"
+          sandbox="allow-scripts allow-same-origin"
+          referrerpolicy="no-referrer"
+          allowfullscreen>
+        </iframe>
+      </article>
+
+      <article class="card">
+        <header class="card-header">
+          <h2>Snake</h2>
+          <a class="open" href="https://playsnake.org/" target="_blank" rel="noopener noreferrer">Fullscreen</a>
+        </header>
+        <iframe
+          class="square"
+          title="Snake"
+          src="https://playsnake.org/"
+          loading="lazy"
+          scrolling="no"
+          sandbox="allow-scripts allow-same-origin"
+          referrerpolicy="no-referrer"
+          allowfullscreen>
+        </iframe>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
